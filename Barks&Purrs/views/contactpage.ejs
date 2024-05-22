@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&P - Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <script type="text/javascript" src="javascript.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+    
+    <div class = "container">
+       
+        <%- include('./partials/nav.ejs') %>
+        
+        <div class = "content">
+            <p style="text-align: center; font-size: 2vw; font-weight: bold;">Contact Us!</p>
+            <div id = "contact">
+                <p>My name: Ryan Cheung</p>
+                <p>Student ID: 40282200</p>
+                <p>If you have any questions or inquiries, feel free to contact us using the following email: 
+                    <span style = "margin-left:10px; color:blue">r_cheung@live.concordia.ca </span></p>
+            </div>
+        </div>
+        
+        <%- include('./partials/footer.ejs') %>
+        
+    </div>
+    
+</body>
+
+</html>

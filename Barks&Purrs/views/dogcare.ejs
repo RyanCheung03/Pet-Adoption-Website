@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&P - Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <script type="text/javascript" src="javascript.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+    
+    <div class = "container">
+       
+        <%- include('./partials/nav.ejs') %>
+    
+        <div class = content>
+            <div class="petcare">
+                    <div style = "text-align: center; font-size: 2vw; font-weight: bold; padding-top: 20px;">Taking Care of Your Dog</div>
+                    <ol class = "petinstructions">
+                        <li><strong>Provide Proper Nutrition:</strong> Feed your dog a balanced diet suitable for their age, size, and breed. Ensure access to clean water at all times.</li>
+                        <li><strong>Regular Exercise:</strong> Take your dog for daily walks and provide opportunities for play and physical activity to keep them healthy and mentally stimulated.</li>
+                        <li><strong>Grooming and Hygiene:</strong> Brush your dog's coat regularly, trim their nails as needed, and maintain dental hygiene. Bathe them when necessary to keep their skin and coat clean.</li>
+                        <li><strong>Regular Veterinary Care:</strong> Schedule routine check-ups with a veterinarian for vaccinations, preventive care, and addressing any health concerns. Stay up-to-date with flea, tick, and parasite prevention.</li>
+                        <li><strong>Training and Socialization:</strong> Teach basic commands and obedience training to establish good behavior. Socialize your dog with other animals and people to ensure they are well-adjusted and friendly.</li>
+                        <li><strong>Provide a Safe Environment:</strong> Create a safe and comfortable living space for your dog with appropriate bedding, shelter, and access to indoor and outdoor areas.</li>
+                        <li><strong>Attention and Affection:</strong> Spend quality time with your dog, providing love, attention, and companionship. Understand their needs and behaviors to strengthen the bond between you and your pet.</li>
+                    </ol>
+                    <p> By following these general instructions, you can ensure the well-being and happiness of your canine companion. 
+                        Remember that each pet is unique, so adjust your care routine based on their individual needs and preferences. 
+                        Regularly assess their health and behavior to address any issues promptly.</p>
+                    <p style = "font-size: 1vw;">Author: OpenAI ChatGPT
+                        Title of the Response: Can you give a short summary  to offer general instructions on how to care for a dog
+                        Website Name: OpenAI ChatGPT (Chat Interface)
+                        Date: February 14, 2024</p>
+            </div>
+        </div>
+       
+        <%- include('./partials/footer.ejs') %>
+        
+    </div>
+    
+</body>
+
+</html>

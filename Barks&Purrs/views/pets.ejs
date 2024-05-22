@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&P - Home Page</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script type="text/javascript" src="/javascript.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <div class="container">
+        
+        <%- include('./partials/nav.ejs') %>
+        
+        <div class="content">
+            <% if (pets.length == 0) { %>
+                <h1 style="text-align: center;">There are no available pets with those criteria</h1>
+            <% }else{ %>
+                <h1 style="text-align: center;">Here are the available  pets with those criteria</h1>
+            <% } %>
+
+            <div class="animalList">
+                <% pets.forEach(pet => { %>
+                    <div class="animal">
+                        <h3><%= pet.name %></h3>
+                        <img src="<%=pet.image%>" alt="<%= pet.name %>">
+                        <div class="description">
+                            <ul>
+                                <li><strong>Type:</strong> <%= pet.type %> </li>
+                                <li><strong>Breed:</strong> <%= pet.breed %></li>
+                                <li><strong>Age:</strong> <%= pet.age %> years</li>
+                                <li><strong>Gender:</strong> <%= pet.gender %></li>
+                                <li><strong>Compatibility</strong> <%= pet.compatibility %></li>
+                                <li><strong>Extra:</strong> <%= pet.extra %></li>
+                            </ul>
+                        </div>
+                        <button>Interested</button>
+                    </div>
+                <% }); %>
+
+                
+            </div>
+
+        </div>
+        
+        <%- include('./partials/footer.ejs') %>
+        
+    </div>
+</body>
+
+</html>
+
+<!-- <div class="animal">
+                    <h3>Olive</h3>
+                    <img src="./images/ollie.JPG" alt="olive">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Cat</li>
+                            <li><strong>Breed:</strong> Tuxedo</li>
+                            <li><strong>Age:</strong> 8 weeks</li>
+                            <li><strong>Gender:</strong> Female</li>
+                            <li><strong>Compatibility</strong> Other cats and young children</li>
+                            <li><strong>Extra:</strong> Always looks her best</li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div>
+
+                <div class="animal">
+                    <h3>Ginger</h3>
+                    <img src="./images/ginger.JPG" alt="ginger">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Cat</li>
+                            <li><strong>Breed:</strong> Ginger</li>
+                            <li><strong>Age:</strong> 11 years</li>
+                            <li><strong>Gender:</strong> Female</li>
+                            <li><strong>Compatibility:</strong> Other cats and young children</li>
+                            <li><strong>Extra: </strong> Brings home other animals allegedly</li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div>
+
+                <div class="animal">
+                    <h3>Luna</h3>
+                    <img src="./images/luna.jpg" alt="luna">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Cat</li>
+                            <li><strong>Breed:</strong> American ShortEars</li>
+                            <li><strong>Age:</strong> 12 years</li>
+                            <li><strong>Gender:</strong> Female</li>
+                            <li><strong>Compatibility</strong> Anyone except Hiss-erins and indviduals missing
+                            their sniffer</li>
+                            <li><strong>Extra:</strong> Also known as The Kitty Who Lived, 
+                                attends Meow-gwarts School of Whisker-craft and Paw-zardry
+                                </li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div>
+
+                <div class="animal">
+                    <h3>Jasmine</h3>
+                    <img src="./images/ashamed_jasmine.JPG" alt="jasmine">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Cat</li>
+                            <li><strong>Breed:</strong> Tabbie</li>
+                            <li><strong>Age:</strong> 10 weeks</li>
+                            <li><strong>Gender:</strong> Female</li>
+                            <li><strong>Compatibility:</strong> Other cats and young children</li>
+                            <li><strong>Extra:</strong> Permanently ashamed </li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div>
+
+                <div class="animal">
+                    <h3>Billy</h3>
+                    <img src="./images/billy.jpg" alt="billy">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Cat</li>
+                            <li><strong>Breed:</strong> Tabbie</li>
+                            <li><strong>Age:</strong> 6 years</li>
+                            <li><strong>Gender:</strong> Male</li>
+                            <li><strong>Compatibility:</strong> Everyone</li>
+                            <li><strong>Extra:</strong> Purr-fessional Rizzologist, affectionate, will casually steal your girl</li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div>
+
+                <div class="animal">
+                    <h3>JJ</h3>
+                    <img src="./images/jj.jpg" alt="jj">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Cat</li>
+                            <li><strong>Breed:</strong> Tabbie</li>
+                            <li><strong>Age:</strong> 3 years</li>
+                            <li><strong>Gender:</strong> Male</li>
+                            <li><strong>Compatibility:</strong> Pikachu-lovers</li>
+                            <li><strong>Extra:</strong> Has a strange addiction to Pikachu, our newest
+                            member of our family</li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div>
+
+                <div class="animal">
+                    <h3>Oscar</h3>
+                    <img src="./images/oscar.jpg" alt="oscar">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Dog</li>
+                            <li><strong>Breed:</strong> French Bulldog</li>
+                            <li><strong>Age:</strong> 7 years</li>
+                            <li><strong>Gender:</strong> Male</li>
+                            <li><strong>Compatibility:</strong> Other dogs and young children</li>
+                            <li><strong>Extra:</strong> Loves bellie rubs and tug of war</li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div>
+
+                <div class="animal">
+                    <h3>Romeo</h3>
+                    <img src="./images/romeo.jpg" alt="romeo">
+                    <div class="description">
+                        <ul>
+                            <li><strong>Type:</strong> Dog</li>
+                            <li><strong>Breed:</strong> Protuguese Water Dog</li>
+                            <li><strong>Age:</strong> 11 months</li>
+                            <li><strong>Gender:</strong> Male</li>
+                            <li><strong>Compatibility:</strong> Other dogs, other cats and young children</li>
+                            <li><strong>Extra:</strong> Who is this dog and why is it in my camera roll</li>
+                        </ul>
+                    </div>
+                    <button>Interested</button>
+                </div> -->

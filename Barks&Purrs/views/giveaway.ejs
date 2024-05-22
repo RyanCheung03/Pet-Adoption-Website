@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&P - Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <script type="text/javascript" src="javascript.js"></script>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <div class = "container">
+       
+        <%- include('./partials/nav.ejs') %>
+
+        <div class="content">
+            <div>
+                <p style="text-align: center; font-size: 30px; font-weight: bold;">Let's Rehome Your Animal!</p>
+            <form  id = "formGive">
+                <p>Are you giving away a dog or a cat?</p>
+                <label>
+                    <input type="radio" name="animalTypeGive" value="Dog" onclick="changeBreedOptions(this)">
+                    Dog
+                </label>
+                <label>
+                    <input type="radio" name="animalTypeGive" value="Cat" onclick="changeBreedOptions(this)">
+                    Cat
+                </label><br><br>
+                Select the breed:
+                <select style="margin-left: 20px;" name="breed" id="breedDropdownGive">
+                </select> <br><br>
+                Choose the age of the animal:
+                <select style="margin-left: 20px;" name="age">
+                    <option value="0-1">0 - 1 year (Puppy/Kitten)</option>
+                    <option value="1-3">1 - 3 years (Young)</option>
+                    <option value="3-7">3-7 years(Adult)</option>
+                    <option value="7-10">7 - 10 years (Mature)</option>
+                    <option value="10+">10+ years (Senior)</option>
+                    <option value = "unsure">Unsure</option>
+                </select><br><br>
+                What is the animal's gender? <br><br>
+                <label><input type="radio" name="genderGive" value="Male">
+                    Male</label>
+                <label><input type="radio" name="genderGive" value="Female">
+                    Female</label><br><br>
+
+                Which of the following is the animal compatible with? (Select those that apply.)<br><br>
+                <label>
+                    <input type="checkbox" name="compatibleGive" value="otherdogs">
+                    Other Dogs
+                </label>
+                <label>
+                    <input type="checkbox" name="compatibleGive" value="othercats">
+                    Other Cats
+                </label>
+                <label>
+                    <input type="checkbox" name="compatibleGive" value="children">
+                    Young Children
+                </label>
+                <label>
+                    <input type="checkbox" name="compatibleGive" value="doesnotmatter">
+                    None
+                </label><br><br>
+
+                Enter any additional information we should know about this animal:<br><br>
+                <textarea name="additionalinfo" rows="8" cols="100" placeholder="Enter your message" id="additionalInfo"></textarea><br><br>
+                First Name:
+                <input type="text" name="firstName" size="30" style="margin-left: 20px;" autocomplete="off" id="firstName"><br><br> 
+
+                Family Name:
+                <input type="text" name="familyName" size="30" style="margin-left: 20px;" autocomplete="off" id="familyName"><br><br>
+
+                Email:
+                <input type="email" name="email" style="margin-left: 20px;" autocomplete="off" id="email" required> <br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+            </div>
+            
+        </div>
+        
+        <%- include('./partials/footer.ejs') %>
+        
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", compatibilityCheckboxes);
+        document.getElementById("formGive").addEventListener("submit", validateForm);
+    </script>
+</body>
+
+</html>

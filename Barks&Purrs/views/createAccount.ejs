@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <script type="text/javascript" src="javascript.js"></script>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <div class="container">
+        <%- include('./partials/nav.ejs') %>
+        <div class="content">
+            <div style = "text-align: center; font-size: 2vw; font-weight: bold; padding: 20px;">Create An Account</div>
+            <div class="createAccount">
+                <form action="/createAccount" method="POST" id="createAccount">
+                    <input type="text" name="username" placeholder="Enter username:" id="username"> <br><br>
+                    <input type="password" name="password" placeholder="Enter password:" id="password"> <br><br>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </form>
+                <div id="messageAreaCreate">
+                    <% if (message) { %>
+                        <p><%= message %></p>
+                    <% } %>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("createAccount").addEventListener('submit', validateCreateAccount);
+    </script>
+</body>
+</html>
